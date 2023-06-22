@@ -13,14 +13,14 @@ All extraction and tranformation data are done in this notebook.
 
 Required libraries:
 
-$ import os
-$ import json
-$ import urllib
-$ import pandas as pd
-$ import numpy as np
-$ from pandas import Timestamp, Series, date_range
-$ from datetime import datetime
-$ import lzma
+	import os
+	import json
+	import urllib
+	import pandas as pd
+	import numpy as np
+	from pandas import Timestamp, Series, date_range
+	from datetime import datetime
+	import lzma
 
 The Bicing station information was extracted from: https://opendata-ajuntament.barcelona.cat/data/ca/dataset/informacio-estacions-bicing
 The Bicing station historical was extracted from: https://opendata-ajuntament.barcelona.cat/data/ca/dataset/estat-estacions-bicing/resource/84c0d6e5-9011-40c2-80a7-65d9af4f671f?inner_span=True
