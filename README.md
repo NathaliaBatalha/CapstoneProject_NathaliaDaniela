@@ -66,6 +66,57 @@ After processing, all data frames are saved in a shared drive to be accesed by t
 
 # 02_Visualization_Data_partI
 
+Required libraries:
+
+	import os
+	import pandas as pd
+	import numpy as np
+	import matplotlib 
+	from matplotlib.dates import MonthLocator
+	import seaborn as sns
+
+
+The notebook, being the first visualization part, presents line plots from data set. The following graphs can be accessed: 
+
+- Timestamp - Docks available by year
+
+- Percentage of docks available by month
+
+- Percentage of docks available by hour 
+
+- Percentage of docks available by day of the week
+
+- Percentage of docks available by day of the week and hour
+
+- Percentage of docks available at different times of the day: by month and day of the week
+
+Comments: From those plots, it is learned that: 
 
 
 # 02_Visualization_Data_partII
+
+Intallation:
+
+	!pip install geopandas 
+	!pip install contextily 
+
+
+Required libraries:
+
+	import os
+	import pandas as pd
+	import numpy as np
+	import matplotlib 
+	from matplotlib.dates import MonthLocator
+	import seaborn as sns
+	import geopandas as gpd
+	import contextily as cx
+
+
+The second part of the visualization exploration refers to geographic plots, using GeoPandas library. 
+
+The plots present useful information regarding station location x altitudes throughout the city. Also, the hourly dock availability in each station may also be explored in this notebook. 
+
+
+
+
