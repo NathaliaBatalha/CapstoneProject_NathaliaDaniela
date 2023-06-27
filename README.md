@@ -59,7 +59,7 @@ The data set to be predicted is also treated in this notebook. Station data insp
 
 ## Weather data
 
-To be completed!
+Wind, precipitation and teperature historicals were obtained and explored in this part. The data will be available in case is useful for machine learning. 
 
 After processing, all data frames are saved in a shared drive to be accesed by the team and from other notebooks. 
 
@@ -118,5 +118,112 @@ The second part of the visualization exploration refers to geographic plots, usi
 The plots present useful information regarding station location x altitudes throughout the city. Also, the hourly dock availability in each station may also be explored in this notebook. 
 
 
+# 03_Models_v6
+
+Required libraries:
+
+	import os
+	import pandas as pd
+	import numpy as np
+
+	#sklearn
+	from sklearn.impute import SimpleImputer
+	from sklearn.pipeline import Pipeline
+	from sklearn.preprocessing import StandardScaler
+	from sklearn.preprocessing import FunctionTransformer
+	from sklearn.preprocessing import OneHotEncoder
+	from sklearn.model_selection import train_test_split
+	from sklearn.compose import ColumnTransformer
+
+	#models
+	from sklearn.linear_model import LinearRegression
+	from sklearn.tree import DecisionTreeRegressor
+	from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
+	from sklearn import neighbors
+	from sklearn.neural_network import MLPRegressor
+
+	from sklearn import set_config
+	from sklearn.metrics import mean_squared_error
+	from sklearn.model_selection import GridSearchCV
+
+	%matplotlib inline
+	import matplotlib as mpl
+	import matplotlib.pyplot as plt
+	mpl.rc('axes', labelsize=14)
+	mpl.rc('xtick', labelsize=12)
+	mpl.rc('ytick', labelsize=12)
+	plt.rc('font', size=12)
+	plt.rc('figure', figsize = (12, 5))
+
+	import seaborn as sns
+	sns.set_style("whitegrid")
+	sns.set_context("notebook", font_scale=1, rc={"lines.linewidth": 2,'font.family': [u'times']})
 
 
+This notebook is dedicated to implement Regression Models for Machine Learning. The following models were explored, evaluated, improved, and analyzed based on data correlation and results. 
+
+- LinearRegression()
+
+- DecisionTreeRegressor()
+
+- RandomForestRegressor()
+
+- MLPRegressor()
+
+- GradientBoostingRegressor()
+
+- KNeighborsRegressor()
+
+
+Training and tests results (diverse variables and parameters were considered) presented that the best Regression Model for the present study is RandomForestRegressor. 
+
+From all the training process, it was learnt:
+
+- Contexts present higher correlation, and are the essential variables 
+- Categorical variables do not present significant impact on learning improvement, considering one hot encodding for them.
+- Grid Search Estimator to find the best parameters was used, which provided supperior results.  
+
+
+# 04_Clusters_stations
+
+Required libraries:
+
+	import os
+	import pandas as pd
+	import numpy as np
+	import folium
+
+	%matplotlib inline
+	import matplotlib as mpl
+	import matplotlib.pyplot as plt
+	import matplotlib.dates as md
+	mpl.rc('axes', labelsize=14)
+	mpl.rc('xtick', labelsize=12)
+	mpl.rc('ytick', labelsize=12)
+	plt.rc('font', size=12)
+	plt.rc('figure', figsize = (12, 5))
+
+	import seaborn as sns
+	sns.set_style("whitegrid")
+	sns.set_context("notebook", font_scale=1, rc={"lines.linewidth": 2,'font.family': [u'times']})
+
+	import sklearn
+	from sklearn.cluster import KMeans
+	from sklearn import metrics
+
+
+
+# Embedding_03_Models_tensorflow_2021_2022
+
+Required libraries:
+
+to complete
+
+
+Once categorical variables do not present significant effect on learning process, the group decided to try Deep Learning model to verify embedding impact on categorical variables. 
+
+Quick note: Keras is a deep learning API written in Python, running on top of the machine learning platform TensorFlow. 
+
+The Keras functional API was used to build the model, because it is more flexible than the keras.Sequential API. The main reason is the flexibility of using multiple inputs on the model. 
+
+Categorical variables need to be selected, quantified, states dimensions of its tensors and apply Embedding layer. 
