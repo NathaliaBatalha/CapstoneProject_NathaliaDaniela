@@ -13,7 +13,7 @@ One of the problems is that, with a limited number of bikes and docks, it is som
 
 In this work, we will study the behavior of users over the years, months, days of the week, and make a model to predict the system availability, given the bike station and the time. These predictions can help riders better plan their trips and help the service more efficiently distribute bikes to stations.
 
-The repository is composed by 5 notebooks. Each notebook contains a different step to complete the present study, as follows:
+The repository is composed by 6 notebooks. Each notebook contains a different step to complete the present study, as follows:
 
 # 01_DF_creations_Station&Bicing_Kaggle_info
 
@@ -269,4 +269,5 @@ The Keras functional API was used to build the model, because it is more flexibl
 Categorical variables need to be selected, quantified, states dimensions of its tensors and apply Embedding layer. Tensors are then concatenated and a list of arrays for categorical and numerical data is provided as input. 
 
 - Different variables and model structures were tested. 
-- Fair results were obtained considering the following categorical variables: 
+- Fair results were obtained considering the following categorical variables: ['station_id', 'hour', 'month', 'year', 'day', 'label' ]; numerical variables: ['ctx-4', 'ctx-3', 'ctx-2', 'ctx-1', 'altitude'] .
+
