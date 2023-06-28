@@ -91,7 +91,14 @@ The notebook, being the first visualization part, presents line plots from data 
 
 - Percentage of docks available at different times of the day: by month and day of the week
 
-Comments: From those plots, it is learned that: 
+These plots showed us that the 2019 and 2020 data are very different from the current ones.
+2019 was the year of implementation of the new Bicing system and 2020 the year of the most intense lockdowns due to the pandemic, so we decided to disregard this data in our training.
+
+We can also see in these plots:
+- difference in usage on weekdays and weekends
+- schedules with greater and lesser use of bicycles
+
+All these insights were useful in building our machine learning models.
 
 
 # 02_Visualization_Data_partII
