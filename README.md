@@ -23,6 +23,7 @@ Required libraries:
 	import lzma
 
 The Bicing station information was extracted from: https://opendata-ajuntament.barcelona.cat/data/ca/dataset/informacio-estacions-bicing
+
 The Bicing station historical was extracted from: https://opendata-ajuntament.barcelona.cat/data/ca/dataset/estat-estacions-bicing/resource/84c0d6e5-9011-40c2-80a7-65d9af4f671f?inner_span=True
 
 ## Station info
@@ -90,7 +91,14 @@ The notebook, being the first visualization part, presents line plots from data 
 
 - Percentage of docks available at different times of the day: by month and day of the week
 
-Comments: From those plots, it is learned that: 
+These plots showed us that the 2019 and 2020 data are very different from the current ones.
+2019 was the year of implementation of the new Bicing system and 2020 the year of the most intense lockdowns due to the pandemic, so we decided to disregard this data in our training.
+
+We can also see in these plots:
+- difference in usage on weekdays and weekends
+- schedules with greater and lesser use of bicycles
+
+All these insights were useful in building our machine learning models.
 
 
 # 02_Visualization_Data_partII
@@ -146,18 +154,11 @@ Required libraries:
 	from sklearn.metrics import mean_squared_error
 	from sklearn.model_selection import GridSearchCV
 
-	%matplotlib inline
 	import matplotlib as mpl
 	import matplotlib.pyplot as plt
-	mpl.rc('axes', labelsize=14)
-	mpl.rc('xtick', labelsize=12)
-	mpl.rc('ytick', labelsize=12)
-	plt.rc('font', size=12)
-	plt.rc('figure', figsize = (12, 5))
 
 	import seaborn as sns
-	sns.set_style("whitegrid")
-	sns.set_context("notebook", font_scale=1, rc={"lines.linewidth": 2,'font.family': [u'times']})
+
 
 
 This notebook is dedicated to implement Regression Models for Machine Learning. The following models were explored, evaluated, improved, and analyzed based on data correlation and results. 
@@ -193,23 +194,22 @@ Required libraries:
 	import numpy as np
 	import folium
 
-	%matplotlib inline
 	import matplotlib as mpl
 	import matplotlib.pyplot as plt
 	import matplotlib.dates as md
-	mpl.rc('axes', labelsize=14)
-	mpl.rc('xtick', labelsize=12)
-	mpl.rc('ytick', labelsize=12)
-	plt.rc('font', size=12)
-	plt.rc('figure', figsize = (12, 5))
 
 	import seaborn as sns
-	sns.set_style("whitegrid")
-	sns.set_context("notebook", font_scale=1, rc={"lines.linewidth": 2,'font.family': [u'times']})
 
 	import sklearn
 	from sklearn.cluster import KMeans
 	from sklearn import metrics
+
+This notebook was inspired by this "Dublin Bikes cluster analysis" notebook:
+https://github.com/jameslawlor/dublin-bikes-timeseries-analysis/blob/master/dublin-bikes-time-series-clustering-and-mapping.ipynb
+
+We used the k-means algorithm to divide stations with similar daily behaviors. Our intention was to train a model using the clusters instead of all stations.
+
+We also plotted a map with Folium with stations divided by color, representing each cluster.
 
 
 
