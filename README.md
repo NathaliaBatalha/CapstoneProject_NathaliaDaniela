@@ -217,7 +217,39 @@ Required libraries:
 
 Required libraries:
 
-to complete
+	from google.colab import drive
+	import os
+	import pandas as pd
+	import numpy as np
+
+	%matplotlib inline
+	import matplotlib as mpl
+	import matplotlib.pyplot as plt
+	mpl.rc('axes', labelsize=14)
+	mpl.rc('xtick', labelsize=12)
+	mpl.rc('ytick', labelsize=12)
+	plt.rc('font', size=12)
+	plt.rc('figure', figsize = (12, 5))
+
+	import seaborn as sns
+	sns.set_style("whitegrid")
+	sns.set_context("notebook", font_scale=1, rc={"lines.linewidth": 2,'font.family': [u'times']})
+
+	import tensorflow as tf
+
+	from tensorflow import keras
+	from tensorflow.keras import layers
+	from tensorflow.keras import models
+	from tensorflow.keras.models import Sequential, Model
+	from tensorflow.keras.layers import Embedding, Reshape, Attention
+	from tensorflow.keras.layers import *
+
+	from sklearn.metrics import r2_score, mean_absolute_error, mean_squared_error, mean_absolute_percentage_error
+
+	# sklearn
+	from sklearn.impute import SimpleImputer
+	from sklearn.model_selection import train_test_split
+	from sklearn.metrics import mean_squared_error
 
 
 Once categorical variables do not present significant effect on learning process, the group decided to try Deep Learning model to verify embedding impact on categorical variables. 
@@ -226,4 +258,7 @@ Quick note: Keras is a deep learning API written in Python, running on top of th
 
 The Keras functional API was used to build the model, because it is more flexible than the keras.Sequential API. The main reason is the flexibility of using multiple inputs on the model. 
 
-Categorical variables need to be selected, quantified, states dimensions of its tensors and apply Embedding layer. 
+Categorical variables need to be selected, quantified, states dimensions of its tensors and apply Embedding layer. Tensors are then concatenated and a list of arrays for categorical and numerical data is provided as input. 
+
+- Different variables and model structures were tested. 
+- Fair results were obtained considering the following categorical variables: 
